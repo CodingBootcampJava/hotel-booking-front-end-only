@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Test main</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js "
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo "
+        crossorigin="anonymous "></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js "
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 "
+        crossorigin="anonymous "></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet " href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container border mt-5 ">
+        <div class="container bg-top">
+            <form>
+                <!-- start of search row -->
+                <div class="row ">
+                    <div class="col mt-2 ">
+                        <!-- search bar -->
+                        <div class="input-group d-flex">
+                            <input type="text " list="results" class="form-control " placeholder="Search...cities"
+                                name="city" id="search" autocomplete="on">
+                            <!-- datalist of autocomplete cities -->
+                            <datalist class="justify-content-center align-content-center w-100" id="results">
+                            </datalist>
+                            <!-- search button -->
+                            <div class="input-group-append ">
+                                <button class="btn bg-search px-5" id="btn_submit" type="submit "> Search </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of search row -->
+                <!-- start 2nd row -->
+                <div class="row mt-2 ">
+                    <!-- start col-4 -->
+                    <div class=" col-sm-4 ">
+                        <div class="input-group ">
+                            <div class="input-group-append border-checkIn ">
+                                <!-- btn with check In callendar icon -->
+                                <span class="btn btn-outline-light text-dark bg-light btn-checkInCal " type="button ">
+                                    <i class="far fa-calendar-alt "></i>
+                                </span>
+                            </div>
+                            <!-- data input -->
+                            <input class="form-control input-group checkInCal" type="text " name="ckeckIn">
+                            <!-- //TODO calendar -->
+                            <div class="input-group-append ">
+                                <!-- btn -1 day -->
+                                <span class="btn btn-outline-light text-dark bg-light checkInCalPrev " type="button ">
+                                    <i class="fa fa-chevron-left "></i>
+                                </span>
+                                <!-- btn +1 day -->
+                                <span class="btn btn-outline-light text-dark bg-light checkInCalNext " type="button ">
+                                    <i class="fas fa-chevron-right "></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- start col-4 -->
+                    <div class=" col-sm-4 ">
+                        <div class="input-group ">
+                            <div class="input-group-append border-checkOut ">
+                                <!-- btn with check Out callendar icon -->
+                                <span class="btn btn-outline-light text-dark bg-light btn-checkOutCal" type="button ">
+                                    <i class="far fa-calendar-alt "></i>
+                                </span>
+                            </div>
+                            <!-- data input -->
+                            <input class="form-control input-group checkOutCal" type="text " name="checkOut">
+                            <!-- //TODO calendar -->
+                            <div class="input-group-append ">
+                                <span class="btn btn-outline-light text-dark bg-light checkOutCalPrev " type="button ">
+                                    <i class="fa fa-chevron-left "></i>
+                                </span>
+                                <!-- btn +1 day -->
+                                <span class="btn btn-outline-light text-dark bg-light checkOutCalNext " type="button ">
+                                    <i class="fas fa-chevron-right "></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- start col-4 -->
+                    <div class="col-sm-4">
+                        <!-- //TODO room type -->
+                        <div class="form-group dropdown open">
+                            <div
+                                class="form-control btn-outline-light text-dark bg-light d-flex align-content-center justify-content-center">
+                                <select name="roomtype" id="roomselect">
+                                    <option value="null" class="text-center">...Choose Roomtype...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end 2nd row -->
+                <!-- start 3rd row -->
+                <div class="row pb-2 text-white">
+                    <!-- start col-4 -->
+                    <div class=" col-sm-4 border-right border-secondary ">
+                        <!-- //TODO price -->
+                        <div class="form-group ">
+                            <div class="row pt-0">
+                                <label class="col text-left " for="priceRange">
+                                    Price
+                                </label>
+                                <label class="col text-right " id="price" for="priceRange">
+                                    Max :5000 €
+                                    <!-- innerText -->
+                                </label>
+                            </div>
+                            <div class="row ">
+                                <div class="col ">
+                                    <div id="priceRange" name="priceRange " class="form-controlpt-4 slider mt-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- start col-2 -->
+                    <div class=" col-sm-2 border-right border-secondary ">
+                        <!-- //TODO property type -->
+                        <div class="form-group ">
+                            <label for="proptype ">Property type</label>
+                            <select
+                                class="bg-transparent border-0 text-white form-control prtype fa dropdown-toggle caret text-center"
+                                name="proptype " aria-haspopup="true" aria-expanded="false" id="prtype ">
+                                <option selected value="0" class="bg-top text-white fa">All</option>
+                                <option value="0" class="bg-top text-white fa">&#9734; &#9734; &#9734; &#9734; &#9734;
+                                    0/5
+                                </option>
+                                <option value="1" class="bg-top text-white fa">&#9733; &#9734; &#9734; &#9734; &#9734;
+                                    1/5
+                                </option>
+                                <option value="2" class="bg-top text-white fa">&#9733; &#9733; &#9734; &#9734; &#9734;
+                                    2/5
+                                </option>
+                                <option value="3" class="bg-top text-white fa">&#9733; &#9733; &#9733; &#9734; &#9734;
+                                    3/5
+                                </option>
+                                <option value="4" class="bg-top text-white fa">&#9733; &#9733; &#9733; &#9733; &#9734;
+                                    4/5
+                                </option>
+                                <option value="5" class="bg-top text-white fa">&#9733; &#9733; &#9733; &#9733; &#9733;
+                                    5/5
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- end col-2 -->
+                    <!-- start col-2 -->
+                    <div class=" col-sm-2 border-right border-secondary ">
+                        <!-- //TODO quest rating -->
+                        <div class="form-group ">
+                            <label for="rating ">Guest rating</label>
+                            <select
+                                class="bg-transparent border-0 text-white form-control fa dropdown-toggle caret rationgList text-center"
+                                aria-haspopup="true" aria-expanded="false" name="rating " id="rating ">
+                                <option selected value="All" class="bg-top text-white fa">All</option>
+                                <option value="Okay" class="bg-top text-white fa">0-2 Okay</option>
+                                <option value="Fair" class="bg-top text-white fa">2-6 Fair</option>
+                                <option value="Good" class="bg-top text-white fa">6-7 Good</option>
+                                <option value="Very Good" class="bg-top text-white fa">7-8.5 Very Good</option>
+                                <option value="Excellent" class="bg-top text-white fa">8.5-10 Excellent</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- end col-2 -->
+                    <!-- start col-4 -->
+                    <div class=" col-sm-4 ">
+                        <!-- //TODO location -->
+                        <div class="form-group ">
+                            <label for="location ">Hotel location</label>
+                            <select
+                                class="bg-transparent border-0 text-white form-control fa dropdown-toggle caret locationList text-center"
+                                aria-haspopup="true" aria-expanded="false" name="location " id="location ">
+                                <!-- append html options -->
+                            </select>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end 3rd row -->
+            </form>
+        </div>
+        <!-- end of the container -->
+        <!-- start of the container -->
+        <div class="container bg-main pb-1">
+            <!-- start 1st row , map & sorting -->
+            <div class="row pt-2">
+                <!-- start col-6 -->
+                <!-- TODO iframe map -->
+                <div class="col-sm-3 d-flex justify-content-start">
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="d-flex justify-content-center align-items-center h-100 w-100">
+                                <iframe class="form-control position-sticky border-0"
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d83998.94722687619!2d2.277019841665155!3d48.8588377391234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgr!4v1554987763683!5m2!1sen!2sgr">
+                                </iframe>
+                                <button type="button" id="btn_map"
+                                    class="btn btn-sm btn-light border-secondary text-dark position-absolute"
+                                    data-toggle="modal" data-target="#map_modal">
+                                    View Map
+                                </button>
+                                <!-- modal with iframe map -->
+                                <div id="map_modal" class="modal fade" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Location Map</h5>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <iframe class="border-0 h-100 w-100"
+                                                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d83998.94722687619!2d2.277019841665155!3d48.8588377391234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgr!4v1554987763683!5m2!1sen!2sgr">
+                                                    </iframe>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-secondary" data-dismiss="modal">OK</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end of modal with iframe map -->
+                    </div>
+                </div>
+                <!-- end col-6 -->
+                <!-- <div class="col"></div> -->
+                <!-- offset-4 -->
+                <!-- start col-5 -->
+                <div class=" col-sm-5 offset-4 d-flex justify-content-end">
+                    <!-- //TODO sort by -->
+                    <div class="input-group">
+                        <div class="input-group-prepend pr-2 text-center align-self-center">Sort by</div>
+                        <!-- <div class="form-control align-self-center input-group-full d-flex "> -->
+                        <select id="sortBy" name="sortby"
+                            class="sortBy form-control input-group-full d-flex align-content-center justify-content-center d-inline-block">
+                            <!-- append html options -->
+                        </select>
+                        <!-- </div> -->
+                        <div class="input-goup-append text-center align-self-center pl-2" id="infoIcon">
+                            <i class="fas fa-info-circle fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col-5 -->
+            </div>
+            <!-- end 1st row , map & sorting -->
+            <!-- start results -->
+            <div id="resultList">
+                <!-- results -->
+            </div>
+            <!-- end of results -->
+        </div>
+        <!-- end of the container -->
+    </div>
+    <!-- end of the main container -->
+</body>
+</html>

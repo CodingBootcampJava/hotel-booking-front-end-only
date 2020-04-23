@@ -1,0 +1,4 @@
+1. I din't uplode the data.json, I used the json file to get the data.
+2. I used the questrating for the star-rating and the property type select. I thought it better as the star-rating range was 0-5.
+3. I also used the ratings(no, text) for the guestrating select because because of the 0-10 range.
+4. Lastly the user can see the results only when the search button is clicked.
